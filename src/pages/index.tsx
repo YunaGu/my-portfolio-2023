@@ -25,30 +25,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="h-screen bg-blue-500 grid content-center">
+        <div className="h-screen grid content-center">
           <div className="grid place-content-center ">
-            <div className="grid grid-cols-2 gap-2 place-content-center place-items-end m-2 bg-white justify-center">
-              <h1 className="bg-red-400  text-5xl ">Hi, I'm</h1>
-              <h1 className="bg-red-700 justify-self-stretch text-7xl">Yun</h1>
+            <div className="grid grid-cols-2 gap-2 place-content-center place-items-end m-2 justify-center">
+              <h1 className="text-5xl ">Hi, I'm</h1>
+              <h1 className="justify-self-stretch text-7xl">Yun</h1>
             </div>
-            <div className='bg-white p-1'>
-              <h1 className="bg-red-400 text-8xl m-2">UX Designer</h1>
-              <h1 className="bg-red-600 text-8xl m-2">Web Developer</h1>
+            <div className='p-1 grid place-items-center'>
+              <h1 className="text-8xl m-2">UX Designer</h1>
+              <h1 className="text-8xl m-2">Web Developer</h1>
             </div>
           </div>
-          <div className="flex justify-center mt-6 bg-red-500">
-              <div className="bg-white m-2"><SocialLink
+          <div className="flex justify-center mt-1 ">
+              <div className="m-2"><SocialLink
                 href="https://github.com/YunaGu"
                 aria-label="Follow on GitHub"
                 icon={FaGithub}
               /></div>
-               <div className="bg-gray-300 m-2"><SocialLink
+               <div className="m-2"><SocialLink
                 href="https://www.linkedin.com/in/yun-gu-2a0a58229/?trk=public-profile-join-page"
                 aria-label="Follow on Linkedin"
                 icon={FaLinkedin}
               /></div>
-               <div className="bg-gray-600 m-2"><SocialLink
-                href="#"
+               <div className="m-2"><SocialLink
+                href="./lib/YunGuCV.pdf"
                 aria-label="Download CV"
                 icon={HiAcademicCap}
               /></div>
