@@ -1,8 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
-const inter = Inter({ subsets: ['latin'] })
+
+import {FaGithub} from "react-icons/fa"
+import {FaLinkedin} from "react-icons/fa"
+import { HiAcademicCap } from "react-icons/hi2";
+
+function SocialLink({ icon: Icon, ...props }) {
+  return (
+    <Link className="group p-1" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  )
+}
 
 export default function Home() {
   return (
@@ -14,7 +25,35 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold underline">Hello!</h1>
+        <div className="h-screen bg-blue-500 grid content-center">
+          <div className="grid place-content-center ">
+            <div className="grid grid-cols-2 gap-2 place-content-center place-items-end m-2 bg-white justify-center">
+              <h1 className="bg-red-400  text-5xl ">Hi, I'm</h1>
+              <h1 className="bg-red-700 justify-self-stretch text-7xl">Yun</h1>
+            </div>
+            <div className='bg-white p-1'>
+              <h1 className="bg-red-400 text-8xl m-2">UX Designer</h1>
+              <h1 className="bg-red-600 text-8xl m-2">Web Developer</h1>
+            </div>
+          </div>
+          <div className="flex justify-center mt-6 bg-red-500">
+              <div className="bg-white m-2"><SocialLink
+                href="https://github.com/YunaGu"
+                aria-label="Follow on GitHub"
+                icon={FaGithub}
+              /></div>
+               <div className="bg-gray-300 m-2"><SocialLink
+                href="https://www.linkedin.com/in/yun-gu-2a0a58229/?trk=public-profile-join-page"
+                aria-label="Follow on Linkedin"
+                icon={FaLinkedin}
+              /></div>
+               <div className="bg-gray-600 m-2"><SocialLink
+                href="#"
+                aria-label="Download CV"
+                icon={HiAcademicCap}
+              /></div>
+            </div>
+        </div>
       </main>
     </>
   )
