@@ -2,10 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
-
+import { useState } from "react";
 import {FaGithub} from "react-icons/fa"
 import {FaLinkedin} from "react-icons/fa"
 import { HiAcademicCap } from "react-icons/hi2";
+import {
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+  AiFillYoutube,
+} from "react-icons/ai";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+// import YunGuCV from "../lib/YunGuCV.pdf"
+
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
@@ -16,6 +24,7 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
       <Head>
@@ -24,36 +33,77 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="h-screen grid content-center">
-          <div className="grid place-content-center ">
-            <div className="grid grid-cols-2 gap-2 place-items-end m-2 justify-center">
-              <h1 className="inline-block align-baseline text-5xl">Hi, I&apos;m</h1>
-              <h1 className="inline-block align-baseline justify-self-stretch text-7xl">Yun</h1>
-            </div>
-            <div className='p-1 grid place-items-center'>
-              <h1 className="text-8xl m-2">UX Designer</h1>
-              <h1 className="text-8xl m-2">Web Developer</h1>
-            </div>
-          </div>
-          <div className="flex justify-center mt-1 ">
-              <div className="m-2"><SocialLink
+
+      <main className="bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+        <section className="flex flex-col content-center min-h-screen">
+          {/* Nav */}
+          <nav className="py-10 flex justify-between dark:text-white">
+            {/* <h1 className="font-burtons text-xl">developedbyed</h1> */}
+            <ul className="flex items-center gap-8">
+              <li>
+                <h1>Home</h1>
+              </li>
+              <li>
+                <h1>Projects</h1>
+              </li>
+              <li>
+                <h1>About</h1>
+              </li>
+              <li>
+                <h1>Contact</h1>
+              </li>
+              {/* <li>
+                <a
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  href="#" download>Resume
+                </a>
+              </li> */}
+            </ul>
+            <ul className="flex items-center">
+              <li>
+                <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className=" cursor-pointer text-2xl"
+                />
+              </li>
+              {/* <li>
+                <a
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  href="#" download>Resume
+                </a>
+              </li> */}
+            </ul>
+          </nav>
+          {/* Content */}
+          <div className="text-center p-10 py-10 grow grid place-content-center">
+            <h2 className="text-5xl py-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 font-medium dark:text-teal-400 md:text-6xl">
+              Yun Gu
+            </h2>
+            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
+              Developer and designer.
+            </h3>
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+              I make arts with codes. Looking for new challenges!
+            </p>
+            <div className="text-3xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
+              <SocialLink
                 href="https://github.com/YunaGu"
                 aria-label="Follow on GitHub"
                 icon={FaGithub}
-              /></div>
-               <div className="m-2"><SocialLink
+              />
+              <SocialLink
                 href="https://www.linkedin.com/in/yun-gu-2a0a58229/?trk=public-profile-join-page"
                 aria-label="Follow on Linkedin"
                 icon={FaLinkedin}
-              /></div>
-               <div className="m-2"><SocialLink
+              />
+              <SocialLink
                 href="./lib/YunGuCV.pdf"
                 aria-label="Download CV"
                 icon={HiAcademicCap}
-              /></div>
+              />
             </div>
-        </div>
+          </div>
+        </section>
       </main>
     </>
   )
