@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 // import avatarImage from '@/images/avatar.jpg'
+import { BsFillMoonStarsFill } from "react-icons/bs";
 
 
 function NavItem({ href, children }) {
@@ -57,9 +58,6 @@ export function Header() {
     function removeProperty(property) {
       document.documentElement.style.removeProperty(property)
     }})
-
-   
-
    
   return (
     <>
@@ -86,7 +84,11 @@ export function Header() {
                
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              
+              <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className=" cursor-pointer text-2xl"
+                />
+          
             </div>
           </Container>
         </div>
