@@ -27,9 +27,9 @@ export default function Home() {
       <main>
         <div className="h-screen grid content-center">
           <div className="grid place-content-center ">
-            <div className="grid grid-cols-2 gap-2 place-content-center place-items-end m-2 justify-center">
-              <h1 className="text-5xl ">Hi, I'm</h1>
-              <h1 className="justify-self-stretch text-7xl">Yun</h1>
+            <div className="grid grid-cols-2 gap-2 place-items-end m-2 justify-center">
+              <h1 className="inline-block align-baseline text-5xl">Hi, I&apos;m</h1>
+              <h1 className="inline-block align-baseline justify-self-stretch text-7xl">Yun</h1>
             </div>
             <div className='p-1 grid place-items-center'>
               <h1 className="text-8xl m-2">UX Designer</h1>
